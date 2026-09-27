@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Tienda de Componentes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1 style="text-align: center;">Mis Productos</h1>
+
+  <div class="grid-productos">
+    <tarjeta-producto 
+      imagen="https://picsum.photos/id/180/300/200" 
+      titulo="Laptop" 
+      precio="1200">
+    </tarjeta-producto>
+
+    <tarjeta-producto 
+      imagen="https://picsum.photos/id/1/300/200" 
+      titulo="Teclado" 
+      precio="50">
+    </tarjeta-producto>
+
+    <tarjeta-producto 
+      imagen="https://picsum.photos/id/96/300/200" 
+      titulo="Monitor" 
+      precio="300">
+    </tarjeta-producto>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <p id="mensaje" style="font-weight: bold; color: green;"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('agregar-producto', (e) => {
+      const mensaje = document.getElementById('mensaje');
+      mensaje.textContent = `¡Agregaste "${e.detail.titulo}" por $${e.detail.precio} al carrito!`;
+    });
+  </script>
+</body>
+</html>
